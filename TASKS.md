@@ -348,67 +348,67 @@
 ## Phase 8: Testing
 
 ### 8.1 Setup Vitest
-- [ ] เพิ่ม test config ใน `vite.config.ts` (vitest section)
-- [ ] กำหนด `environment: "jsdom"`
-- [ ] สร้าง test setup file (`src/test/setup.ts`) → import `@testing-library/jest-dom`
-- [ ] เพิ่ม script ใน `package.json`: `"test": "vitest"`
-- [ ] ทดสอบรัน `npx vitest run` ได้ (แม้ยังไม่มี test)
+- [x] เพิ่ม test config ใน `vite.config.ts` (vitest section)
+- [x] กำหนด `environment: "jsdom"`
+- [x] สร้าง test setup file (`src/test/setup.ts`) → import `@testing-library/jest-dom`
+- [x] เพิ่ม script ใน `package.json`: `"test": "vitest"`
+- [x] ทดสอบรัน `npx vitest run` ได้ (แม้ยังไม่มี test)
 
 ### 8.2 Unit Tests — Utility Functions
-- [ ] สร้าง `src/utils/__tests__/format.test.ts`
-- [ ] Test `formatDate()`:
-  - [ ] input valid date string → return formatted string ถูกต้อง
-  - [ ] input null/undefined → return fallback (เช่น "-")
-- [ ] Test `getInitials()`:
-  - [ ] "Alex Taylor" → "AT"
-  - [ ] "John" → "J" (ชื่อเดียว)
-  - [ ] "" (empty) → fallback
-- [ ] Test `getStatusColor()`:
-  - [ ] "NEED_APPROVAL" → return yellow classes
-  - [ ] "APPROVED" → return green classes
-  - [ ] "unknown_status" → return gray fallback
+- [x] สร้าง `src/utils/__tests__/format.test.ts`
+- [x] Test `formatDate()`:
+  - [x] input valid date string → return formatted string ถูกต้อง
+  - [x] input null/undefined → return fallback (เช่น "-")
+- [x] Test `getInitials()`:
+  - [x] "Alex Taylor" → "AT"
+  - [x] "John" → "J" (ชื่อเดียว)
+  - [x] "" (empty) → fallback
+- [x] Test `getStatusColor()`:
+  - [x] "NEED_APPROVAL" → return yellow classes
+  - [x] "APPROVED" → return green classes
+  - [x] "unknown_status" → return gray fallback
 
 ### 8.3 Component Tests — Badge
-- [ ] สร้าง `src/components/ui/__tests__/Badge.test.tsx`
-- [ ] render Badge กับ variant "NEED_APPROVAL" → มี text "Need approval"
-- [ ] render Badge กับ variant "APPROVED" → มี text "Approved"
-- [ ] render Badge กับ unknown variant → ใช้ gray style (ไม่ crash)
+- [x] สร้าง `src/components/ui/__tests__/Badge.test.tsx`
+- [x] render Badge กับ variant "NEED_APPROVAL" → มี text "Need approval"
+- [x] render Badge กับ variant "APPROVED" → มี text "Approved"
+- [x] render Badge กับ unknown variant → ใช้ gray style (ไม่ crash)
 
 ### 8.4 Component Tests — ActionButtons
-- [ ] สร้าง `src/components/request/__tests__/ActionButtons.test.tsx`
-- [ ] `canApprove: true, canReject: true` → render ทั้ง 2 buttons
-- [ ] `canApprove: false` → ไม่มี Approve button
-- [ ] `canReject: false` → ไม่มี Reject button
-- [ ] `canApprove: false, canReject: false` → ไม่ render อะไรเลย
-- [ ] `status: "APPROVED"` → ไม่ render buttons เลย
-- [ ] click Approve → `console.log` ถูกเรียก
-- [ ] click Reject → `console.log` ถูกเรียก
+- [x] สร้าง `src/components/request/__tests__/ActionButtons.test.tsx`
+- [x] `canApprove: true, canReject: true` → render ทั้ง 2 buttons
+- [x] `canApprove: false` → ไม่มี Approve button
+- [x] `canReject: false` → ไม่มี Reject button
+- [x] `canApprove: false, canReject: false` → ไม่ render อะไรเลย
+- [x] `status: "APPROVED"` → ไม่ render buttons เลย
+- [x] click Approve → `console.log` ถูกเรียก
+- [x] click Reject → `console.log` ถูกเรียก
 
 ### 8.5 Component Tests — ApprovalStep
-- [ ] สร้าง `src/components/approval/__tests__/ApprovalStep.test.tsx`
-- [ ] step status "SUBMITTED" → render green check icon
-- [ ] step status "NEED_APPROVAL" → render blue dot icon
-- [ ] step status "UNDER_REVIEW" → render gray circle icon
-- [ ] step status "APPROVED" → render green check icon
-- [ ] step status "REJECTED" → render red X icon
-- [ ] `actedAt: null` → ไม่แสดงวันที่
-- [ ] `actedAt: "2026-01-02T09:00:00"` → แสดงวันที่ formatted
-- [ ] `isLast: true` → ไม่แสดง connecting line
+- [x] สร้าง `src/components/approval/__tests__/ApprovalStep.test.tsx`
+- [x] step status "SUBMITTED" → render green check icon
+- [x] step status "NEED_APPROVAL" → render blue dot icon
+- [x] step status "UNDER_REVIEW" → render gray circle icon
+- [x] step status "APPROVED" → render green check icon
+- [x] step status "REJECTED" → render red X icon
+- [x] `actedAt: null` → ไม่แสดงวันที่
+- [x] `actedAt: "2026-01-02T09:00:00"` → แสดงวันที่ formatted
+- [x] `isLast: true` → ไม่แสดง connecting line
 
 ### 8.6 Component Tests — RequestDetails
-- [ ] สร้าง `src/components/request/__tests__/RequestDetails.test.tsx`
-- [ ] render กับ linkedRequests มี items → แสดง Tag chips
-- [ ] render กับ linkedRequests ว่าง `[]` → แสดง "-"
-- [ ] แสดง company name ถูกต้อง
-- [ ] แสดง request type label ถูกต้อง
+- [x] สร้าง `src/components/request/__tests__/RequestDetails.test.tsx`
+- [x] render กับ linkedRequests มี items → แสดง Tag chips
+- [x] render กับ linkedRequests ว่าง `[]` → แสดง "-"
+- [x] แสดง company name ถูกต้อง
+- [x] แสดง request type label ถูกต้อง
 
 ### 8.7 Integration Test — Page State Toggle
-- [ ] สร้าง `src/__tests__/App.test.tsx`
-- [ ] Default render → แสดง NEED_APPROVAL state
-- [ ] กด toggle → เปลี่ยนเป็น APPROVED state
-- [ ] NEED_APPROVAL → มี Approve/Reject buttons
-- [ ] APPROVED → ไม่มี Approve/Reject buttons
-- [ ] APPROVED → มี "Approved" result ใน timeline
+- [x] สร้าง `src/__tests__/App.test.tsx`
+- [x] Default render → แสดง NEED_APPROVAL state
+- [x] กด toggle → เปลี่ยนเป็น APPROVED state
+- [x] NEED_APPROVAL → มี Approve/Reject buttons
+- [x] APPROVED → ไม่มี Approve/Reject buttons
+- [x] APPROVED → มี "Approved" result ใน timeline
 
 ---
 
