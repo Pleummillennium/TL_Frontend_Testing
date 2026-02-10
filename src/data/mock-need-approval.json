@@ -1,0 +1,81 @@
+{
+  "request": {
+    "id": "CA-PO-26010002",
+    "title": "Office supplies Purchase request",
+    "status": "NEED_APPROVAL",
+    "statusLabel": "Need approval",
+    "createdBy": {
+      "id": "user-001",
+      "name": "Alex Taylor",
+      "title": "Procurement Officer"
+    },
+    "createdAt": "2026-01-02T09:00:00",
+    "viewCount": 3
+  },
+  "details": {
+    "company": {
+      "id": "comp-001",
+      "name": "CAR Corporation"
+    },
+    "requestType": {
+      "code": "PO",
+      "label": "Purchase Order"
+    },
+    "linkedRequests": [
+      { "id": "CA-PO-26010001", "type": "PO" },
+      { "id": "CA-PR-26010001", "type": "PR" }
+    ]
+  },
+  "approvalFlow": {
+    "currentStepId": "step-002",
+    "steps": [
+      {
+        "id": "step-001",
+        "order": 1,
+        "user": {
+          "id": "user-001",
+          "name": "Alex Taylor",
+          "title": "Procurement Officer"
+        },
+        "companyTag": "CAR Corporation",
+        "role": "SUBMITTER",
+        "status": "SUBMITTED",
+        "statusLabel": "Submitted",
+        "actedAt": "2026-01-02T09:00:00"
+      },
+      {
+        "id": "step-002",
+        "order": 2,
+        "user": {
+          "id": "user-002",
+          "name": "Jordan Lee",
+          "title": "Finance Manager"
+        },
+        "companyTag": "CAR Corporation",
+        "role": "REVIEWER",
+        "status": "NEED_APPROVAL",
+        "statusLabel": "Need approval",
+        "actedAt": null
+      },
+      {
+        "id": "step-003",
+        "order": 3,
+        "user": {
+          "id": "user-003",
+          "name": "Morgan Chen",
+          "title": "Director of Finance"
+        },
+        "companyTag": "CAR Corporation",
+        "role": "APPROVER",
+        "status": "UNDER_REVIEW",
+        "statusLabel": "Under review",
+        "actedAt": null
+      }
+    ]
+  },
+  "permissions": {
+    "canApprove": true,
+    "canReject": true,
+    "canDuplicate": true
+  }
+}

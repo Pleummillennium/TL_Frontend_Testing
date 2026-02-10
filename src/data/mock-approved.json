@@ -1,0 +1,78 @@
+{
+  "request": {
+    "id": "CA-PO-26010003",
+    "title": "Printer delivery confirmation",
+    "status": "APPROVED",
+    "statusLabel": "Approved",
+    "createdBy": {
+      "id": "user-001",
+      "name": "Alex Taylor",
+      "title": "Procurement Officer"
+    },
+    "createdAt": "2026-01-03T10:30:00",
+    "viewCount": 5
+  },
+  "details": {
+    "company": {
+      "id": "comp-001",
+      "name": "CAR Corporation"
+    },
+    "requestType": {
+      "code": "PO",
+      "label": "Purchase Order"
+    },
+    "linkedRequests": []
+  },
+  "approvalFlow": {
+    "currentStepId": "step-003",
+    "steps": [
+      {
+        "id": "step-001",
+        "order": 1,
+        "user": {
+          "id": "user-001",
+          "name": "Alex Taylor",
+          "title": "Procurement Officer"
+        },
+        "companyTag": "CAR Corporation",
+        "role": "SUBMITTER",
+        "status": "SUBMITTED",
+        "statusLabel": "Submitted",
+        "actedAt": "2026-01-03T10:30:00"
+      },
+      {
+        "id": "step-002",
+        "order": 2,
+        "user": {
+          "id": "user-002",
+          "name": "Jordan Lee",
+          "title": "Finance Manager"
+        },
+        "companyTag": "CAR Corporation",
+        "role": "REVIEWER",
+        "status": "APPROVED",
+        "statusLabel": "Approved",
+        "actedAt": "2026-01-03T14:15:00"
+      },
+      {
+        "id": "step-003",
+        "order": 3,
+        "user": {
+          "id": "user-003",
+          "name": "Morgan Chen",
+          "title": "Director of Finance"
+        },
+        "companyTag": "CAR Corporation",
+        "role": "APPROVER",
+        "status": "APPROVED",
+        "statusLabel": "Approved",
+        "actedAt": "2026-01-04T09:45:00"
+      }
+    ]
+  },
+  "permissions": {
+    "canApprove": false,
+    "canReject": false,
+    "canDuplicate": true
+  }
+}
