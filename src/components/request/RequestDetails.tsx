@@ -10,8 +10,8 @@ export default function RequestDetails({ title, details }: RequestDetailsProps) 
   const { company, requestType, linkedRequests } = details
 
   return (
-    <div className="bg-white rounded-lg border border-gray-200 p-6">
-      <div className="grid grid-cols-2 gap-4">
+    <div className="bg-white rounded-lg border border-gray-200 p-6 transition-shadow hover:shadow-sm">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* Cell 1: Company */}
         <div>
           <p className="text-xs text-gray-500 mb-1">Company</p>

@@ -7,7 +7,7 @@ const mockAttachments = [
 
 export default function Attachments() {
   return (
-    <div className="bg-white rounded-lg border border-gray-200 p-6">
+    <div className="bg-white rounded-lg border border-gray-200 p-6 transition-shadow hover:shadow-sm">
       <h3 className="text-sm font-semibold text-gray-900 mb-4">Attachment</h3>
 
       <div className="divide-y divide-gray-100">

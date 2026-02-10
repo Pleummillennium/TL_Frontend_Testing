@@ -1,6 +1,7 @@
 import { ArrowLeft, Share2, Printer, Eye, Copy } from 'lucide-react'
-import { format } from 'date-fns'
 import Badge from '../ui/Badge'
+import BlurText from '../reactbits/BlurText'
+import { formatDate } from '../../utils/format'
 import type { RequestData } from '../../types/request'
 
 interface PageHeaderProps {
@@ -11,7 +12,7 @@ export default function PageHeader({ data }: PageHeaderProps) {
   const { request, permissions } = data
   const isApproved = request.status === 'APPROVED'
 
-  const formattedDate = format(new Date(request.createdAt), 'dd/MM/yyyy HH:mm:ss')
+  const formattedDate = formatDate(request.createdAt)
 
   return (
     <div className="mb-6">
@@ -25,10 +26,15 @@ export default function PageHeader({ data }: PageHeaderProps) {
       </button>
 
       {/* Row 2: Title + Badge + Actions */}
-      <div className="flex items-start justify-between gap-4">
+      <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
         {/* Left: Title + Badge */}
         <div className="flex items-center gap-3 flex-wrap">
-          <h1 className="text-xl font-bold text-gray-900">{request.title}</h1>
+          <BlurText
+            text={request.title}
+            className="text-xl font-bold text-gray-900"
+            delay={80}
+            animateBy="words"
+          />
           <Badge status={request.status} label={request.statusLabel} />
         </div>
 
@@ -74,7 +80,7 @@ export default function PageHeader({ data }: PageHeaderProps) {
       </div>
 
       {/* Row 3: Meta info */}
-      <div className="flex items-center gap-4 mt-2 text-sm text-gray-500">
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-2 text-sm text-gray-500">
         <span>{request.id}</span>
         <span className="w-px h-4 bg-gray-300" />
         <span>Created by: {request.createdBy.name}</span>

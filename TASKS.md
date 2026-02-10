@@ -284,64 +284,64 @@
 ## Phase 7: Responsive & Polish
 
 ### 7.1 State Toggle (สลับ NEED_APPROVAL ↔ APPROVED)
-- [ ] สร้าง toggle/tab UI ด้านบนของ page (หรือใน Navbar)
-- [ ] Tab 1: "Need Approval" — โหลด `mock-need-approval.json`
-- [ ] Tab 2: "Approved" — โหลด `mock-approved.json`
-- [ ] Highlight tab ที่ active
-- [ ] `useState` เก็บ current state, สลับ data ตาม state
+- [x] สร้าง toggle/tab UI ด้านบนของ page (หรือใน Navbar)
+- [x] Tab 1: "Need Approval" — โหลด `mock-need-approval.json`
+- [x] Tab 2: "Approved" — โหลด `mock-approved.json`
+- [x] Highlight tab ที่ active
+- [x] `useState` เก็บ current state, สลับ data ตาม state
 - [ ] ทดสอบ: กดสลับแล้ว UI เปลี่ยนถูกต้อง (buttons หาย, badge เปลี่ยนสี, timeline เปลี่ยน)
 
 ### 7.2 Utility Functions
-- [ ] สร้างไฟล์ `src/utils/format.ts`
-- [ ] `formatDate(dateString)` → ใช้ date-fns format เป็น `dd/MM/yyyy HH:mm:ss`
-- [ ] `getInitials(name)` → แยกชื่อ → return initials (เช่น "AT")
-- [ ] `getStatusColor(status)` → return Tailwind class string ตาม status
-- [ ] Export ทุก function
+- [x] สร้างไฟล์ `src/utils/format.ts`
+- [x] `formatDate(dateString)` → ใช้ date-fns format เป็น `dd/MM/yyyy HH:mm:ss`
+- [x] `getInitials(name)` → แยกชื่อ → return initials (เช่น "AT")
+- [x] `getStatusColor(status)` → return Tailwind class string ตาม status
+- [x] Export ทุก function
 
 ### 7.3 Responsive Layout
-- [ ] Two-column → single column เมื่อ `< md` (768px)
-- [ ] Mobile: left column อยู่บน, Approval Flow อยู่ล่าง
-- [ ] Navbar: ซ่อน nav links บน mobile (หรือ collapse)
-- [ ] PageHeader: action icons อาจ wrap ลงบรรทัดใหม่
-- [ ] RequestDetails grid: 2x2 → 1 column บน mobile (`grid-cols-1 md:grid-cols-2`)
+- [x] Two-column → single column เมื่อ `< md` (768px)
+- [x] Mobile: left column อยู่บน, Approval Flow อยู่ล่าง
+- [x] Navbar: ซ่อน nav links บน mobile (หรือ collapse)
+- [x] PageHeader: action icons อาจ wrap ลงบรรทัดใหม่
+- [x] RequestDetails grid: 2x2 → 1 column บน mobile (`grid-cols-1 md:grid-cols-2`)
 - [ ] ทดสอบบน viewport 375px, 768px, 1024px, 1440px
 
 ### 7.4 Apply React Bits Components
-- [ ] **Text Animation** — แทนที่ title text ใน PageHeader ด้วย React Bits component (เช่น BlurText)
-  - [ ] import component จาก `src/components/reactbits/`
-  - [ ] wrap title text ด้วย animated component
-  - [ ] ปรับ props: duration, delay ให้เหมาะสม (ไม่ช้าเกินไป)
+- [x] **Text Animation** — แทนที่ title text ใน PageHeader ด้วย React Bits component (เช่น BlurText)
+  - [x] import component จาก `src/components/reactbits/`
+  - [x] wrap title text ด้วย animated component
+  - [x] ปรับ props: duration, delay ให้เหมาะสม (ไม่ช้าเกินไป)
   - [ ] ทดสอบ: text animate เมื่อ page load / เมื่อสลับ state
-- [ ] **Navbar Text** — ใส่ GradientText (ถ้าติดตั้ง) กับ "Portal" text
-  - [ ] ปรับ gradient colors ให้เข้ากับ theme
-- [ ] **Background Effect** — ใส่ animated background (ถ้าเลือกติดตั้ง)
+- [x] **Navbar Text** — ใส่ GradientText กับ "Portal" text
+  - [x] ปรับ gradient colors ให้เข้ากับ theme (blue → purple → blue)
+- [ ] **Background Effect** — ใส่ animated background (เพิ่มทีหลังถ้าต้องการ)
   - [ ] วาง background component ไว้ด้านหลัง content (`position: fixed, z-index: -1`)
   - [ ] ปรับ opacity / blur ไม่ให้รบกวนการอ่าน content
   - [ ] ทดสอบ performance: ไม่ทำให้ page lag
-- [ ] **Card Animations** — ใส่ fade-in / slide-in ให้ cards (ถ้ามี component เหมาะสม)
-- [ ] ตรวจสอบ: React Bits components ไม่ conflict กับ Tailwind styles ที่มีอยู่
+- [ ] **Card Animations** — ใส่ fade-in / slide-in ให้ cards (เพิ่มทีหลังถ้าต้องการ)
+- [x] ตรวจสอบ: React Bits components ไม่ conflict กับ Tailwind styles ที่มีอยู่
 - [ ] ตรวจสอบ: animations ไม่ทำให้ accessibility แย่ลง (respect prefers-reduced-motion)
 
 ### 7.5 Hover States & Transitions
-- [ ] Buttons: hover effect (เปลี่ยนสี bg)
-- [ ] Icon buttons: `hover:bg-gray-100 rounded-lg p-2 transition-colors`
-- [ ] Nav links: `hover:text-blue-600`
-- [ ] Back button: `hover:underline`
-- [ ] Cards: optional subtle hover shadow
+- [x] Buttons: hover effect (เปลี่ยนสี bg)
+- [x] Icon buttons: `hover:bg-gray-100 rounded-lg p-2 transition-colors`
+- [x] Nav links: `hover:text-gray-700`
+- [x] Back button: `hover:underline`
+- [x] Cards: optional subtle hover shadow
 
 ### 7.6 Edge Cases
-- [ ] Linked requests ว่าง (`[]`) → แสดง "-" ✓ (ตรวจกับ mock-approved.json)
-- [ ] `actedAt: null` → ไม่แสดงวันที่ใน ApprovalStep ✓
-- [ ] `permissions.canApprove: false` → ซ่อน Approve button ✓
-- [ ] Long user name → `truncate` class (ellipsis) ✓
-- [ ] Unknown status → gray badge fallback ✓
+- [x] Linked requests ว่าง (`[]`) → แสดง "-" ✓ (ตรวจกับ mock-approved.json)
+- [x] `actedAt: null` → ไม่แสดงวันที่ใน ApprovalStep ✓
+- [x] `permissions.canApprove: false` → ซ่อน Approve button ✓
+- [x] Long user name → `truncate` class (ellipsis) ✓
+- [x] Unknown status → gray badge fallback ✓
 
 ### 7.7 Final Polish
-- [ ] Font: ใส่ Inter font (Google Fonts) หรือใช้ system font stack
-- [ ] ตรวจ spacing, padding ให้สม่ำเสมอ
-- [ ] ตรวจสี text/bg ให้มี contrast เพียงพอ
-- [ ] ลบ console.log ที่ไม่จำเป็น (เก็บไว้เฉพาะ action buttons)
-- [ ] ตรวจ TypeScript: ไม่มี `any`, ไม่มี error
+- [x] Font: ใส่ Inter font (Google Fonts)
+- [x] ตรวจ spacing, padding ให้สม่ำเสมอ
+- [x] ตรวจสี text/bg ให้มี contrast เพียงพอ
+- [x] ลบ console.log ที่ไม่จำเป็น (เก็บไว้เฉพาะ action buttons)
+- [x] ตรวจ TypeScript: ไม่มี `any`, ไม่มี error
 
 ---
 

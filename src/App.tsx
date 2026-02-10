@@ -18,13 +18,25 @@ function App() {
       <Navbar />
 
       <main className="max-w-[1200px] mx-auto px-4 py-6">
-        {/* Temporary: state toggle */}
-        <button
-          className="mb-4 px-4 py-2 bg-blue-600 text-white rounded text-sm"
-          onClick={() => setIsApproved(!isApproved)}
-        >
-          Toggle: {isApproved ? 'Approved' : 'Need Approval'}
-        </button>
+        {/* State Toggle Tabs */}
+        <div className="flex gap-1 mb-6 bg-gray-200 rounded-lg p-1 w-fit">
+          <button
+            className={`px-4 py-1.5 rounded-md text-sm font-medium transition-colors ${
+              !isApproved ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-500 hover:text-gray-700'
+            }`}
+            onClick={() => setIsApproved(false)}
+          >
+            Need Approval
+          </button>
+          <button
+            className={`px-4 py-1.5 rounded-md text-sm font-medium transition-colors ${
+              isApproved ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-500 hover:text-gray-700'
+            }`}
+            onClick={() => setIsApproved(true)}
+          >
+            Approved
+          </button>
+        </div>
 
         <PageHeader data={data} />
 

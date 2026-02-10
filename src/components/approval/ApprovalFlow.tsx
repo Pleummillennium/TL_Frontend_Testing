@@ -11,7 +11,7 @@ export default function ApprovalFlow({ approvalFlow, requestStatus }: ApprovalFl
   const showResult = requestStatus === 'APPROVED' || requestStatus === 'REJECTED'
 
   return (
-    <div className="bg-white rounded-lg border border-gray-200 p-6">
+    <div className="bg-white rounded-lg border border-gray-200 p-6 transition-shadow hover:shadow-sm">
       <h3 className="text-sm font-semibold text-gray-900 mb-5">Approval flow</h3>
 
       <div>
