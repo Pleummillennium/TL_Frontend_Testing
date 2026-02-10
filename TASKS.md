@@ -251,33 +251,33 @@
 ## Phase 6: Action Buttons
 
 ### 6.1 สร้าง ActionButtons Component
-- [ ] สร้างไฟล์ `src/components/request/ActionButtons.tsx`
-- [ ] รับ props: `permissions` (Permissions type), `status` (RequestStatus)
+- [x] สร้างไฟล์ `src/components/request/ActionButtons.tsx`
+- [x] รับ props: `permissions` (Permissions type), `status` (RequestStatus)
 
 ### 6.2 Reject Button
-- [ ] Style: outlined, สีแดง (`border-red-500 text-red-500 bg-white`)
-- [ ] Icon: X (`X` จาก lucide) ฝั่งซ้ายของ text
-- [ ] Text: "Reject"
-- [ ] Hover: `hover:bg-red-50`
-- [ ] แสดงเฉพาะเมื่อ `permissions.canReject === true`
-- [ ] `onClick` → `console.log("Reject clicked")`
+- [x] Style: outlined, สีแดง (`border-red-500 text-red-500 bg-white`)
+- [x] Icon: X (`X` จาก lucide) ฝั่งซ้ายของ text
+- [x] Text: "Reject"
+- [x] Hover: `hover:bg-red-50`
+- [x] แสดงเฉพาะเมื่อ `permissions.canReject === true`
+- [x] `onClick` → `console.log("Reject clicked")`
 
 ### 6.3 Approve Button
-- [ ] Style: filled, สีน้ำเงินเข้ม (`bg-blue-800 text-white`)
-- [ ] Icon: Check (`Check` จาก lucide) ฝั่งซ้ายของ text
-- [ ] Text: "Approve"
-- [ ] Hover: `hover:bg-blue-900`
-- [ ] แสดงเฉพาะเมื่อ `permissions.canApprove === true`
-- [ ] `onClick` → `console.log("Approve clicked")`
+- [x] Style: filled, สีน้ำเงินเข้ม (`bg-blue-800 text-white`)
+- [x] Icon: Check (`Check` จาก lucide) ฝั่งซ้ายของ text
+- [x] Text: "Approve"
+- [x] Hover: `hover:bg-blue-900`
+- [x] แสดงเฉพาะเมื่อ `permissions.canApprove === true`
+- [x] `onClick` → `console.log("Approve clicked")`
 
 ### 6.4 Conditional Rendering
-- [ ] ถ้า `status === "APPROVED"` → ไม่ render component เลย (return null)
-- [ ] ถ้า `canApprove === false && canReject === false` → ไม่ render
-- [ ] Layout: `flex gap-3 justify-end` (buttons ชิดขวา)
+- [x] ถ้า `status === "APPROVED"` → ไม่ render component เลย (return null)
+- [x] ถ้า `canApprove === false && canReject === false` → ไม่ render
+- [x] Layout: `flex gap-3 justify-end` (buttons ชิดขวา)
 
 ### 6.5 ประกอบเข้า Left Column
-- [ ] ใส่ `<ActionButtons>` ใต้ `<Attachments>` ใน left column
-- [ ] ส่ง props: permissions, status
+- [x] ใส่ `<ActionButtons>` ใต้ `<Attachments>` ใน left column
+- [x] ส่ง props: permissions, status
 
 ---
 
