@@ -105,21 +105,21 @@
 ## Phase 2: Layout & Navbar
 
 ### 2.1 สร้าง Navbar Component
-- [ ] สร้างไฟล์ `src/components/layout/Navbar.tsx`
-- [ ] ฝั่งซ้าย: Logo icon + text "Portal" (bold)
-- [ ] ฝั่งกลาง: Nav links — "My requests", "My approve", "History"
-- [ ] Highlight active link (เช่น "My requests" เป็น bold/สีเข้ม)
-- [ ] ฝั่งขวา: Avatar วงกลม แสดง initials "AT" (พื้นหลังสี, text สีขาว)
-- [ ] ใส่ `border-bottom` สีเทาอ่อน (`border-b border-gray-200`)
-- [ ] Layout ใช้ `flex justify-between items-center`
-- [ ] กำหนด height คงที่ (เช่น `h-16`)
+- [x] สร้างไฟล์ `src/components/layout/Navbar.tsx`
+- [x] ฝั่งซ้าย: Logo icon + text "Portal" (bold)
+- [x] ฝั่งกลาง: Nav links — "My requests", "My approve", "History"
+- [x] Highlight active link (เช่น "My requests" เป็น bold/สีเข้ม)
+- [x] ฝั่งขวา: Avatar วงกลม แสดง initials "AT" (พื้นหลังสี, text สีขาว)
+- [x] ใส่ `border-bottom` สีเทาอ่อน (`border-b border-gray-200`)
+- [x] Layout ใช้ `flex justify-between items-center`
+- [x] กำหนด height คงที่ (เช่น `h-16`)
 
 ### 2.2 Setup Page Layout ใน App.tsx
-- [ ] import Navbar → render ด้านบนสุด
-- [ ] สร้าง main container: `max-w-[1200px] mx-auto px-4 py-6`
-- [ ] เตรียม state toggle สำหรับสลับ mock data (`useState`)
-- [ ] import mock data ทั้ง 2 ชุด
-- [ ] ส่ง data เป็น props ลงไปให้ child components (เตรียมไว้)
+- [x] import Navbar → render ด้านบนสุด
+- [x] สร้าง main container: `max-w-[1200px] mx-auto px-4 py-6`
+- [x] เตรียม state toggle สำหรับสลับ mock data (`useState`)
+- [x] import mock data ทั้ง 2 ชุด
+- [x] ส่ง data เป็น props ลงไปให้ child components (เตรียมไว้)
 
 ---
 
