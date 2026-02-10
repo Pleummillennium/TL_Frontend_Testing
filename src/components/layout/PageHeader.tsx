@@ -1,6 +1,5 @@
 import { ArrowLeft, Share2, Printer, Eye, Copy } from 'lucide-react'
 import Badge from '../ui/Badge'
-import BlurText from '../reactbits/BlurText'
 import { formatDate } from '../../utils/format'
 import type { RequestData } from '../../types/request'
 
@@ -29,12 +28,7 @@ export default function PageHeader({ data }: PageHeaderProps) {
       <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
         {/* Left: Title + Badge */}
         <div className="flex items-center gap-3 flex-wrap">
-          <BlurText
-            text={request.title}
-            className="text-xl font-bold text-gray-900"
-            delay={80}
-            animateBy="words"
-          />
+          <h1 className="text-xl font-bold text-gray-900">{request.title}</h1>
           <Badge status={request.status} label={request.statusLabel} />
         </div>
 

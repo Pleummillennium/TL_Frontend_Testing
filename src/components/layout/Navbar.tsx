@@ -1,5 +1,4 @@
 import { LayoutGrid } from 'lucide-react'
-import GradientText from '../reactbits/GradientText'
 
 const navLinks = [
   { label: 'My requests', active: true },
@@ -13,13 +12,7 @@ export default function Navbar() {
       {/* Left: Logo */}
       <div className="flex items-center gap-2">
         <LayoutGrid className="w-6 h-6 text-blue-600" />
-        <GradientText
-          colors={['#2563eb', '#7c3aed', '#2563eb']}
-          animationSpeed={6}
-          className="text-lg font-bold"
-        >
-          Portal
-        </GradientText>
+        <span className="text-lg font-bold text-blue-600">Portal</span>
       </div>
 
       {/* Center: Nav links (hidden on mobile) */}

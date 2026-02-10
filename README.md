@@ -24,14 +24,12 @@ npm run build
 | **Tailwind CSS 4** | Utility-first CSS framework (`@tailwindcss/vite` plugin) |
 | **Lucide React** | Lightweight SVG icon library |
 | **date-fns** | Date formatting utility (lightweight, tree-shakeable) |
-| **motion** | Animation library for React Bits components (BlurText, GradientText) |
 
 ## Features
 
 - **Approval Flow Timeline** — Visual timeline with status icons, connecting lines, and user info
 - **Conditional Action Buttons** — Approve/Reject buttons shown based on permissions and status
 - **Responsive Layout** — Two-column grid on desktop, single column on mobile
-- **Animated Text** — BlurText title animation, GradientText in navbar (via React Bits)
 
 ## Project Structure
 
@@ -40,7 +38,6 @@ src/
 ├── components/
 │   ├── approval/           # ApprovalFlow, ApprovalStep, ApprovalResult
 │   ├── layout/             # Navbar, PageHeader
-│   ├── reactbits/          # BlurText, GradientText (copy-paste components)
 │   ├── request/            # RequestDetails, Attachments, ActionButtons
 │   └── ui/                 # Badge, Tag, Avatar
 ├── data/                   # Mock JSON data (need-approval, approved)
