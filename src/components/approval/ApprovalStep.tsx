@@ -1,4 +1,4 @@
-import { CheckCircle2, XCircle, Circle } from 'lucide-react'
+import { Check, XCircle, Circle } from 'lucide-react'
 import Badge from '../ui/Badge'
 import Avatar from '../ui/Avatar'
 import { formatDate } from '../../utils/format'
@@ -14,7 +14,11 @@ function StatusIcon({ status }: { status: string }) {
   switch (status) {
     case 'SUBMITTED':
     case 'APPROVED':
-      return <CheckCircle2 className="w-6 h-6 text-green-500 shrink-0" />
+      return (
+        <div className="w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center shrink-0">
+          <Check className="w-3.5 h-3.5 text-white" strokeWidth={3} />
+        </div>
+      )
     case 'NEED_APPROVAL':
       return (
         <div className="w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center shrink-0">
@@ -25,7 +29,7 @@ function StatusIcon({ status }: { status: string }) {
       return <XCircle className="w-6 h-6 text-red-500 shrink-0" />
     case 'UNDER_REVIEW':
     default:
-      return <Circle className="w-6 h-6 text-gray-300 shrink-0" />
+      return <Circle className="w-6 h-6 text-blue-300 shrink-0" />
   }
 }
 
@@ -38,7 +42,7 @@ export default function ApprovalStep({ step, isLast, requestStatus }: ApprovalSt
       {/* Left: Icon + connecting line */}
       <div className="flex flex-col items-center">
         <StatusIcon status={iconStatus} />
-        {!isLast && <div className="w-px flex-1 bg-gray-200 my-1" />}
+        {!isLast && <div className="w-px flex-1 bg-blue-500 my-1" />}
       </div>
 
       {/* Right: Content */}
