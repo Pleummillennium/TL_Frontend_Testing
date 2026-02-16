@@ -17,13 +17,13 @@ npm run build
 
 ## Tech Stack
 
-| Technology | Purpose |
-|---|---|
-| **React 19** + **TypeScript** | UI framework with type safety |
-| **Vite 7** | Build tool — fast HMR and optimized production builds |
-| **Tailwind CSS 4** | Utility-first CSS framework (`@tailwindcss/vite` plugin) |
-| **React Router 7** | Client-side routing (`BrowserRouter`, `NavLink`) |
-| **Lucide React** | Lightweight SVG icon library |
+| Technology                    | Purpose                                                  |
+| ----------------------------- | -------------------------------------------------------- |
+| **React 19** + **TypeScript** | UI framework with type safety                            |
+| **Vite 7**                    | Build tool — fast HMR and optimized production builds    |
+| **Tailwind CSS 4**            | Utility-first CSS framework (`@tailwindcss/vite` plugin) |
+| **React Router 7**            | Client-side routing (`BrowserRouter`, `NavLink`)         |
+| **Lucide React**              | Lightweight SVG icon library                             |
 
 ## Features
 
@@ -46,18 +46,18 @@ src/
 │   └── NotFoundPage.tsx            # 404 page
 │
 ├── components/
-│   ├── approval/
+│   ├── approval/                   # Approval flow timeline components
 │   │   ├── ApprovalFlow.tsx        # Renders the full approval timeline
 │   │   ├── ApprovalStep.tsx        # Single step — icon, user info, badges, date
 │   │   └── ApprovalResult.tsx      # Final result banner (Approved/Rejected)
-│   ├── layout/
+│   ├── layout/                     # Shared layout components (navbar, page header)
 │   │   ├── Navbar.tsx              # Top nav — logo, links, dynamic user avatar
 │   │   └── PageHeader.tsx          # Request title, status badge, action icons
-│   ├── request/
+│   ├── request/                    # Request detail section components
 │   │   ├── RequestDetails.tsx      # Company, request type, linked requests
 │   │   ├── Attachments.tsx         # File attachment list (mock data)
 │   │   └── ActionButtons.tsx       # Approve/Reject buttons with loading state
-│   └── ui/
+│   └── ui/                         # Reusable generic UI primitives
 │       ├── Badge.tsx               # Status badge — color based on status
 │       ├── Avatar.tsx              # User initials circle
 │       └── Tag.tsx                 # Labeled tag (company, role)
@@ -78,12 +78,3 @@ src/
 - Approve flow is step-by-step: each click advances to the next approver until final approval
 - Reject terminates at the current step immediately
 - Attachment files are mock/placeholder data
-
-## Future Improvements
-
-- Swap `mockFetch()` for real `fetch()` — only `mockApi.ts` needs to change
-- Add confirmation dialogs before approve/reject
-- Add file upload and download for attachments
-- ~~Add routing (React Router) for multi-page navigation~~ Done
-- Add animation effects (card fade-in, page transitions)
-- Add E2E tests with Playwright or Cypress
