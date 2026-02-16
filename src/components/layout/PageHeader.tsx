@@ -1,4 +1,5 @@
 import { ArrowLeft, Share2, Printer, Eye, Copy } from "lucide-react";
+import { useNavigate } from "react-router";
 import Badge from "../ui/Badge";
 import { formatDate } from "../../utils/format";
 import type { RequestData } from "../../types/request";
@@ -8,6 +9,7 @@ interface PageHeaderProps {
 }
 
 export default function PageHeader({ data }: PageHeaderProps) {
+  const navigate = useNavigate();
   const { request, permissions } = data;
   const isApproved = request.status === "APPROVED";
 
@@ -18,7 +20,7 @@ export default function PageHeader({ data }: PageHeaderProps) {
       {/* Row 1: Back link */}
       <button
         className="flex items-center gap-1 text-blue-600 text-sm font-medium mb-3 hover:underline"
-        onClick={() => console.log("Back clicked")}
+        onClick={() => navigate("/")}
       >
         <ArrowLeft className="w-4 h-4" />
         Back

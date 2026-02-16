@@ -1,37 +1,40 @@
-import { LayoutGrid } from 'lucide-react'
+import { NavLink } from "react-router";
 
 const navLinks = [
-  { label: 'My requests', active: true },
-  { label: 'My approve', active: false },
-  { label: 'History', active: false },
-]
+  { label: "My requests", to: "/" },
+  { label: "My approve", to: "/approve" },
+  { label: "History", to: "/history" },
+];
 
 interface NavbarProps {
-  userInitials?: string
+  userInitials?: string;
 }
 
-export default function Navbar({ userInitials = 'JM' }: NavbarProps) {
+export default function Navbar({ userInitials = "JM" }: NavbarProps) {
   return (
     <nav className="h-16 border-b border-gray-200 bg-white px-6 flex justify-between items-center">
       {/* Left: Logo */}
       <div className="flex items-center gap-2">
-        <LayoutGrid className="w-6 h-6 text-blue-600" />
+        <img src="/logo-tl.svg" alt="" />
         <span className="text-lg font-bold text-blue-600">Portal</span>
       </div>
 
       {/* Center: Nav links (hidden on mobile) */}
       <div className="hidden md:flex items-center gap-8">
         {navLinks.map((link) => (
-          <button
+          <NavLink
             key={link.label}
-            className={`text-sm transition-colors ${
-              link.active
-                ? 'font-semibold text-gray-900'
-                : 'font-medium text-gray-500 hover:text-gray-700'
-            }`}
+            to={link.to}
+            className={({ isActive }) =>
+              `text-sm transition-colors ${
+                isActive
+                  ? "font-semibold text-gray-900"
+                  : "font-medium text-gray-500 hover:text-gray-700"
+              }`
+            }
           >
             {link.label}
-          </button>
+          </NavLink>
         ))}
       </div>
 
@@ -40,5 +43,5 @@ export default function Navbar({ userInitials = 'JM' }: NavbarProps) {
         <span className="text-sm font-semibold text-white">{userInitials}</span>
       </div>
     </nav>
-  )
+  );
 }

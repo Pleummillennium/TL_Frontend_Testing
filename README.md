@@ -22,6 +22,7 @@ npm run build
 | **React 19** + **TypeScript** | UI framework with type safety |
 | **Vite 7** | Build tool — fast HMR and optimized production builds |
 | **Tailwind CSS 4** | Utility-first CSS framework (`@tailwindcss/vite` plugin) |
+| **React Router 7** | Client-side routing (`BrowserRouter`, `NavLink`) |
 | **Lucide React** | Lightweight SVG icon library |
 
 ## Features
@@ -36,8 +37,13 @@ npm run build
 
 ```
 src/
-├── App.tsx                         # Root component — owns state, passes data to children
+├── App.tsx                         # Root component — BrowserRouter + Routes
 ├── main.tsx                        # Entry point — renders App into DOM
+│
+├── pages/
+│   ├── MyRequestsPage.tsx          # Placeholder list page — links to detail
+│   ├── RequestDetailPage.tsx       # Request detail — owns state, handlers, page layout
+│   └── NotFoundPage.tsx            # 404 page
 │
 ├── components/
 │   ├── approval/
@@ -78,6 +84,6 @@ src/
 - Swap `mockFetch()` for real `fetch()` — only `mockApi.ts` needs to change
 - Add confirmation dialogs before approve/reject
 - Add file upload and download for attachments
-- Add routing (React Router) for multi-page navigation
+- ~~Add routing (React Router) for multi-page navigation~~ Done
 - Add animation effects (card fade-in, page transitions)
 - Add E2E tests with Playwright or Cypress
